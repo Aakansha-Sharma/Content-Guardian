@@ -1,73 +1,131 @@
-# Welcome to your Lovable project
+# Content Guardian Shield
 
-## Project info
+A blockchain-based content protection and licensing platform that helps creators protect their digital content and manage licenses.
 
-**URL**: https://lovable.dev/projects/20341cdc-b197-49c4-bb66-de5486fd3b7b
+## Features
 
-## How can I edit this code?
+- Content Registration on Ethereum Blockchain
+- IPFS Storage Integration
+- AI-Powered Content Verification
+- License Management System
+- Modern React Frontend
+- Python Flask Backend
 
-There are several ways of editing your application.
+## Prerequisites
 
-**Use Lovable**
+- Python 3.8 or higher
+- Node.js 16 or higher
+- npm 7 or higher
+- Ethereum node (local or Infura)
+- IPFS node (Infura)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/20341cdc-b197-49c4-bb66-de5486fd3b7b) and start prompting.
+## Quick Start
 
-Changes made via Lovable will be committed automatically to this repo.
+### Windows
+```bash
+# Run the setup script
+setup.bat
 
-**Use your preferred IDE**
+# Start the backend (in a new terminal)
+cd backend
+venv\Scripts\activate
+python app.py
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start the frontend (in another terminal)
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+### Linux/Mac
+```bash
+# Make the setup script executable
+chmod +x setup.sh
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+# Run the setup script
+./setup.sh
 
-**Use GitHub Codespaces**
+# Start the backend (in a new terminal)
+cd backend
+source venv/bin/activate
+python app.py
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+# Start the frontend (in another terminal)
+npm run dev
+```
 
-## What technologies are used for this project?
+## Project Structure
 
-This project is built with:
+```
+content-guardian-shield/
+├── backend/                 # Python Flask backend
+│   ├── app.py              # Main Flask application
+│   ├── contracts/          # Smart contracts
+│   ├── data/               # Data storage
+│   ├── scripts/            # Utility scripts
+│   └── tests/              # Backend tests
+├── src/                    # React frontend
+│   ├── components/         # React components
+│   ├── services/           # API services
+│   └── App.tsx            # Main App component
+└── package.json           # Frontend dependencies
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Configuration
 
-## How can I deploy this project?
+1. Copy `backend/.env.example` to `backend/.env`
+2. Update the following variables in `.env`:
+   - `ETHEREUM_NODE_URL`: Your Ethereum node URL
+   - `IPFS_NODE_URL`: Your IPFS node URL
+   - `SECRET_KEY`: A secure secret key for Flask
 
-Simply open [Lovable](https://lovable.dev/projects/20341cdc-b197-49c4-bb66-de5486fd3b7b) and click on Share -> Publish.
+## Development
 
-## Can I connect a custom domain to my Lovable project?
+### Backend
+```bash
+cd backend
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+python app.py
+```
 
-Yes it is!
+### Frontend
+```bash
+npm run dev
+```
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### Running Tests
+```bash
+# Backend tests
+cd backend
+pytest
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+# Frontend tests
+npm test
+```
+
+## API Endpoints
+
+### Content Registration
+- POST `/api/content/register`
+  - Register new content on the blockchain
+  - Required fields: content, title, type
+
+### Content Verification
+- POST `/api/content/verify`
+  - Verify content ownership
+  - Required fields: content, type
+
+### License Management
+- POST `/api/licenses/create`
+  - Create a new license
+  - Required fields: contentId, licenseType, permissions
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.

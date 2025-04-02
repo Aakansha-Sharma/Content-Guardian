@@ -1,26 +1,58 @@
-# Dependencies
-node_modules
-.pnp
-.pnp.js
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+.env
+venv/
+.venv/
+ENV/
 
-# Testing
-coverage
-
-# Production
-dist
-build
-
-# Misc
-.DS_Store
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
 
-# Logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Project specific
+backend/data/
+backend/contracts/*.json
+!backend/contracts/ContentGuardian.json
+
+# Testing
+coverage
+
+# Misc
+.env.*
 
 # Editor directories and files
 .vscode/*
@@ -31,7 +63,3 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
-
-# Environment variables
-.env
-.env.*
